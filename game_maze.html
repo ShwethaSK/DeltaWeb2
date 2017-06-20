@@ -20,7 +20,7 @@ var i;
 var img,imgData;
 var door;
 var time;
-var num=120;
+var num=60;
 var s=50;
 function startGame()
 	{
@@ -41,7 +41,7 @@ function startGame()
             time=new component(this.context,"20px","consolas","red",750,50,"text");
 			document.body.insertBefore(this.canvas,document.body.childNodes[0]);
 			this.interval=setInterval(updateGameArea,20);
-		setTimeout(function(){clearInterval(this.interval);alert("Game over!");document.location.reload();},120000);
+		setTimeout(function(){clearInterval(this.interval);alert("Game over!");document.location.reload();},60000);
 			window.addEventListener("keydown",function(e)
 			{
 				myGameArea.key=e.keyCode;
@@ -110,7 +110,7 @@ function startGame()
           		}
 		this.crashWith=function()
 		{
-            if(this.color=="0,0,0,255")//if this.color is checked for not being equal to black the gamepiece does not move at all
+            if(this.color()=="0,0,0,255")//if this.color is checked for not being equal to black the gamepiece does not move at all
             	return true;
 		}
 		this.crashWithDoor=function(otherobj)
